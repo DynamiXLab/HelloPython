@@ -51,8 +51,21 @@ print(text.replace("Python", "World"))  # "  Hello World  "
 
 ### 练习任务
 
-**任务（简单部分）**：用 f-string 创建一个自我介绍模板，至少包含姓名、年龄、爱好三个变量，打印出一段完整的话。
+**任务（⭐ 容易）**：用 f-string 创建一个自我介绍模板，至少包含姓名、年龄、爱好三个变量，打印出一段完整的话。
 
-**任务（挑战部分）**：给定一个姓名变量 `full_name = " zhang san "`（注意前后有空格，且是小写），请用之前学过的字符串方法，把它格式化成 `"Zhang San"`（首字母大写，中间空格保留，去掉两端空格）并输出。
+**任务（⭐⭐ 中等）**：给定一个姓名变量 `full_name = " zhang san "`（注意前后有空格，且是小写），请用字符串方法把它格式化成 `"Zhang San"`（首字母大写，去掉两端空格）并输出。
 
 > 提示：可以试试 `title()` 方法和 `strip()` 方法。
+
+**任务（⭐⭐⭐ 困难）**：给定一个字符串 `sentence = "i love python and python loves me"`，完成以下操作并输出每一步的结果：
+
+1. 统计 `python` 出现了几次（提示：用 `count()`）
+2. 把所有的 `python` 替换成 `Java`
+3. 把最终结果全部转成大写
+4. 输出最终句子的总长度（提示：用 `len()`）
+
+```python
+sentence = "i love python and python loves me"
+```
+
+> 这道题综合运用了 `count()`、`replace()`、`upper()`、`len()` 和变量。

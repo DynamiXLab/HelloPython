@@ -40,7 +40,9 @@ print(machine.freq())  # 输出类似：240000000（240MHz）
 
 ### 练习任务
 
-**任务**：按本章步骤完成 MicroPython 固件烧录，在 Thonny 的 Shell 中输入以下代码然后回车：
+### 练习任务
+
+**任务（⭐ 容易）**：按本章步骤完成 MicroPython 固件烧录，在 Thonny 的 Shell 中输入：
 
 ```python
 import esp
@@ -49,3 +51,30 @@ print("Hello from ESP32!")
 ```
 
 拍一张 Thonny 界面截图，确保 Shell 中能看到 ESP32 的回复。
+
+**任务（⭐⭐ 中等）**：在 Thonny Shell 中依次执行以下命令，记录每条的输出：
+
+```python
+import machine
+print(machine.freq())        # CPU 频率
+import gc
+gc.collect()                 # 垃圾回收
+print(gc.mem_free())         # 可用内存（字节）
+import os
+print(os.listdir())          # 列出 ESP32 上的文件
+```
+
+> 思考：ESP32 的可用内存和你电脑的内存差多少个数量级？
+
+**任务（⭐⭐⭐ 困难）**：在 ESP32 上创建一个文件 `boot.py`，写入以下内容：
+
+```python
+import esp
+esp.osdebug(None)
+print("=== DynamiXLab ESP32 ===")
+print("System Ready!")
+```
+
+然后重启 ESP32（按 RST 键），观察是否在启动时自动打印了欢迎信息。
+
+> 提示：`boot.py` 是 ESP32 的启动脚本，每次上电都会自动执行。可以用 Thonny 的"文件→另存为→保存到 MicroPython 设备"来保存。

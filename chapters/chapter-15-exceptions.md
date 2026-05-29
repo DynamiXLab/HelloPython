@@ -56,6 +56,42 @@ print(f"你输入的数字是：{num}")
 
 ### 练习任务
 
-**任务（简单部分）**：让用户输入两个整数并计算除法。用 `try...except` 处理用户输入非数字和除数为 0 的情况。
+### 练习任务
 
-**任务（挑战部分）**：改进第10章的猜数字游戏——给用户 `try...except` 保护，输入非数字时提示"请输入数字"，不计入猜测次数。
+**任务（⭐ 容易）**：让用户输入两个整数并计算除法。用 `try...except` 处理以下情况：
+
+- 输入非数字时提示"请输入数字"
+- 除数为 0 时提示"除数不能为 0"
+
+**任务（⭐⭐ 中等）**：改进第10章的猜数字游戏——给用户 `try...except` 保护，输入非数字时提示"请输入数字"，不计入猜测次数。
+
+**任务（⭐⭐⭐ 困难）**：写一个"安全文件读取器"：
+
+1. 提示用户输入文件名
+2. 尝试读取并显示文件内容
+3. 处理所有可能的异常：
+   - 文件不存在（`FileNotFoundError`）→ 提示"文件不存在"
+   - 权限不足（`PermissionError`）→ 提示"没有读取权限"
+   - 编码错误（`UnicodeDecodeError`）→ 提示"文件编码不支持"
+   - 其他异常 → 提示"未知错误"并显示错误信息
+4. 用 `while True` 循环让用户反复尝试，输入 `quit` 退出
+
+```python
+while True:
+    filename = input("请输入文件名（quit退出）：")
+    if filename == "quit":
+        break
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("文件不存在！")
+    except PermissionError:
+        print("没有读取权限！")
+    except UnicodeDecodeError:
+        print("文件编码不支持！")
+    except Exception as e:
+        print(f"未知错误：{e}")
+```
+
+> 综合运用：异常处理（第15章）+ 文件读写（第14章）+ while 循环（第10章）+ 条件判断（第7章）。

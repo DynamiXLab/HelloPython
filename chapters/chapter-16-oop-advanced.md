@@ -182,25 +182,31 @@ print(c.perimeter)  # 31.4
 
 ### 练习任务
 
-**任务（简单部分）**：定义一个 `Shape` 父类，包含 `name` 属性和 `area()` 方法（返回 0）。再定义两个子类 `Rectangle`（矩形，参数 width, height）和 `Circle`（圆，参数 radius），分别重写 `area()` 方法。创建几个对象，分别调用 `area()` 计算面积。
+### 练习任务
 
-**任务（挑战部分）**：设计一个**简易图书馆管理系统**：
+**任务（⭐ 容易）**：定义一个 `Shape` 父类，包含 `name` 属性和 `area()` 方法（返回 0）。再定义两个子类 `Rectangle`（矩形）和 `Circle`（圆），分别重写 `area()` 方法。创建几个对象并调用 `area()` 计算面积。
+
+**任务（⭐⭐ 中等）**：设计一个**简易图书馆管理系统**：
 
 1. 定义 `Book` 类：属性 `title`、`author`，魔法方法 `__str__` 返回格式化的书名信息
 2. 定义 `Library` 类：属性 `books`（列表），方法 `add_book(book)`、`remove_book(title)`、`find_by_author(author)`（返回该作者所有书）、`list_all()`
 3. 创建 Library 对象，添加至少 5 本书，测试所有功能
 
-> 提示：`find_by_author` 可以用列表推导式 `[b for b in self.books if b.author == author]`。
+**任务（⭐⭐⭐ 困难）**：设计一个**员工薪资管理系统**：
 
+1. 定义 `Employee` 父类：属性 `name`、`base_salary`，方法 `get_salary()` 返回基本工资
+2. 定义子类 `FullTimeEmployee`（全职）：额外属性 `bonus`（奖金），`get_salary()` 返回基本工资 + 奖金
+3. 定义子类 `PartTimeEmployee`（兼职）：额外属性 `hourly_rate`（时薪）、`hours`（工时），`get_salary()` 返回时薪 × 工时
+4. 定义 `Company` 类：
+   - 属性：`name`、`employees`（列表）
+   - 方法：`add_employee(emp)`、`total_salary()`（计算总薪资）、`highest_paid()`（返回薪资最高的员工）、`__len__`（返回员工数量）
+5. 创建公司，添加全职和兼职员工各 2 名，测试所有功能
+
+```python
+公司名称：科技有限公司
+员工总数：4
+总薪资：31000.0
+薪资最高：张三 (15000.0)
 ```
-输出参考：
---- 图书馆藏书 ---
-《三体》- 刘慈欣
-《流浪地球》- 刘慈欣
-《活着》- 余华
-《许三观卖血记》- 余华
-《三毛流浪记》- 张乐平
---- 搜索：刘慈欣 ---
-《三体》- 刘慈欣
-《流浪地球》- 刘慈欣
-```
+
+> 综合运用：继承与多态（第16章）+ 魔法方法（第16章）+ 列表操作（第8章）+ 类基础（第13章）。
