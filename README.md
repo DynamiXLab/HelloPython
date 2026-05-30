@@ -41,7 +41,7 @@
 | Day 10 | 第15章 | 异常处理（try/except、防御式编程） | 1h |
 | Day 11 | 第16~17章 | 认识 ESP32、MicroPython 固件烧录 | 1.5h |
 | Day 12 | 第18章 | GPIO 点亮 LED（含限流电阻计算） | 1.5h |
-| Day 13 | 第19~20章 | 按键输入、PWM 呼吸灯 | 1.5h |
+| Day 13 | 第19~20章 | PWM 呼吸灯、按键输入 | 1.5h |
 | Day 14 | 第21章 | 🏆 毕业项目：温湿度计 + OLED 显示 | 2h |
 
 > 💡 每天 1~2 小时即可完成。第5、8 章内容较多，可酌情拆分到两天。每章练习先自己做，再看 `exercise-answers.md`。14天后可继续选读附录（文件读写、OOP进阶）。
@@ -68,8 +68,8 @@
 | 16 | [嵌入式是什么 & 认识 ESP32](chapters/chapter-16-embedded-esp32.md) | Day 11 |
 | 17 | [MicroPython 固件烧录 & Thonny 连接](chapters/chapter-17-micropython-setup.md) | Day 11 |
 | 18 | [GPIO 点亮 LED](chapters/chapter-18-gpio-led.md) | Day 12 |
-| 19 | [按键输入——ESP32 感知物理世界](chapters/chapter-19-button-input.md) | Day 13 |
-| 20 | [PWM 呼吸灯](chapters/chapter-20-pwm.md) | Day 13 |
+| 19 | [PWM 呼吸灯](chapters/chapter-19-pwm.md) | Day 13 |
+| 20 | [按键输入——ESP32 感知物理世界](chapters/chapter-20-button-input.md) | Day 13 |
 | 21 | [🏆 毕业项目：温湿度计 + OLED](chapters/chapter-21-final-project.md) | Day 14 |
 | | |
 | 附 | [OOP 进阶（继承、多态、魔法方法）](chapters/appendix-oop-advanced.md) | 选读 |
