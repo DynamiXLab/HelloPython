@@ -48,33 +48,34 @@
 
 ## 🗂 目录
 
-| 文件 | 说明 |
+| 章节 | 序号 |
 |------|------|
-| [chapter-01-python-intro.md](chapters/chapter-01-python-intro.md) | 第1章 Python 是什么 & 安装 Thonny |
-| [chapter-02-hello-world.md](chapters/chapter-02-hello-world.md) | 第2章 第一行代码：Hello, World! |
-| [chapter-03-variables.md](chapters/chapter-03-variables.md) | 第3章 变量（含类型转换） |
-| [chapter-04-numbers-and-operators.md](chapters/chapter-04-numbers-and-operators.md) | 第4章 数字与运算符 |
-| [chapter-05-strings.md](chapters/chapter-05-strings.md) | 第5章 字符串（f-string、转义、r''） |
-| [chapter-06-input.md](chapters/chapter-06-input.md) | 第6章 input() |
-| [chapter-07-conditionals.md](chapters/chapter-07-conditionals.md) | 第7章 条件判断（含缩进详解） |
-| [chapter-08-lists.md](chapters/chapter-08-lists.md) | 第8章 列表（索引、切片全解） |
-| [chapter-09-for-loop.md](chapters/chapter-09-for-loop.md) | 第9章 for 循环 |
-| [chapter-10-while-loop.md](chapters/chapter-10-while-loop.md) | 第10章 while 循环 |
-| [chapter-11-dict-tuple.md](chapters/chapter-11-dict-tuple.md) | 第11章 字典与元组（三种容器对比） |
-| [chapter-12-functions.md](chapters/chapter-12-functions.md) | 第12章 函数 |
-| [chapter-13-oop-basics.md](chapters/chapter-13-oop-basics.md) | 第13章 面向对象入门 |
-| [chapter-14-exceptions.md](chapters/chapter-14-exceptions.md) | 第14章 异常处理 |
-| [chapter-15-embedded-esp32.md](chapters/chapter-15-embedded-esp32.md) | 第15章 嵌入式是什么 & 认识 ESP32 |
-| [chapter-16-micropython-setup.md](chapters/chapter-16-micropython-setup.md) | 第16章 MicroPython 固件烧录 |
-| [chapter-17-gpio-led.md](chapters/chapter-17-gpio-led.md) | 第17章 GPIO 点亮 LED |
-| [chapter-18-button-input.md](chapters/chapter-18-button-input.md) | 第18章 按键输入 |
-| [chapter-19-pwm.md](chapters/chapter-19-pwm.md) | 第19章 PWM 呼吸灯 |
-| [chapter-20-final-project.md](chapters/chapter-20-final-project.md) | 第20章 🏆 毕业项目：温湿度计 + OLED |
-| [appendix-oop-advanced.md](chapters/appendix-oop-advanced.md) | 附录：OOP 进阶（继承、多态） |
-| [appendix-file-io.md](chapters/appendix-file-io.md) | 附录：文件读写 |
-| [appendix-troubleshooting.md](chapters/appendix-troubleshooting.md) | 附录：问题排查 & 学习路线 |
-| [exercise-answers.md](chapters/exercise-answers.md) | 参考答案 |
-| [python-esp32-tutorial.md](chapters/python-esp32-tutorial.md) | 完整合订本 |
+| [Python 是什么 & 安装 Thonny](chapters/chapter-01-python-intro.md) | 第1章 |
+| [第一行代码：Hello, World!](chapters/chapter-02-hello-world.md) | 第2章 |
+| [变量——给数据取个名字](chapters/chapter-03-variables.md) | 第3章 |
+| [数字与运算符](chapters/chapter-04-numbers-and-operators.md) | 第4章 |
+| [字符串——文本处理的起点](chapters/chapter-05-strings.md) | 第5章 |
+| [input()——让程序和用户对话](chapters/chapter-06-input.md) | 第6章 |
+| [条件判断——让程序学会做选择](chapters/chapter-07-conditionals.md) | 第7章 |
+| [列表——一个变量装多个数据](chapters/chapter-08-lists.md) | 第8章 |
+| [for 循环——重复的事情交给机器](chapters/chapter-09-for-loop.md) | 第9章 |
+| [while 循环——不知道要循环多少次？](chapters/chapter-10-while-loop.md) | 第10章 |
+| [字典与元组](chapters/chapter-11-dict-tuple.md) | 第11章 |
+| [函数——把代码打包成积木](chapters/chapter-12-functions.md) | 第12章 |
+| [面向对象入门——把数据和功能打包](chapters/chapter-13-oop-basics.md) | 第13章 |
+| [异常处理——程序出错了怎么办](chapters/chapter-14-exceptions.md) | 第14章 |
+| [嵌入式是什么 & 认识 ESP32](chapters/chapter-15-embedded-esp32.md) | 第15章 |
+| [MicroPython 固件烧录 & Thonny 连接](chapters/chapter-16-micropython-setup.md) | 第16章 |
+| [GPIO 点亮 LED](chapters/chapter-17-gpio-led.md) | 第17章 |
+| [按键输入——ESP32 感知物理世界](chapters/chapter-18-button-input.md) | 第18章 |
+| [PWM 呼吸灯](chapters/chapter-19-pwm.md) | 第19章 |
+| [🏆 毕业项目：温湿度计 + OLED](chapters/chapter-20-final-project.md) | 第20章 |
+| | |
+| [附录：OOP 进阶（继承、多态、魔法方法）](chapters/appendix-oop-advanced.md) | 附录 |
+| [附录：文件读写](chapters/appendix-file-io.md) | 附录 |
+| [附录：问题排查 & 学习路线](chapters/appendix-troubleshooting.md) | 附录 |
+| [参考答案](chapters/exercise-answers.md) | — |
+| [完整合订本](chapters/python-esp32-tutorial.md) | — |
 
 ## 📄 许可
 
