@@ -48,34 +48,34 @@
 
 ## 🗂 目录
 
-| 章节 | 序号 |
-|------|------|
-| [Python 是什么 & 安装 Thonny](chapters/chapter-01-python-intro.md) | 第1章 |
-| [第一行代码：Hello, World!](chapters/chapter-02-hello-world.md) | 第2章 |
-| [变量——给数据取个名字](chapters/chapter-03-variables.md) | 第3章 |
-| [数字与运算符](chapters/chapter-04-numbers-and-operators.md) | 第4章 |
-| [字符串——文本处理的起点](chapters/chapter-05-strings.md) | 第5章 |
-| [input()——让程序和用户对话](chapters/chapter-06-input.md) | 第6章 |
-| [条件判断——让程序学会做选择](chapters/chapter-07-conditionals.md) | 第7章 |
-| [列表——一个变量装多个数据](chapters/chapter-08-lists.md) | 第8章 |
-| [for 循环——重复的事情交给机器](chapters/chapter-09-for-loop.md) | 第9章 |
-| [while 循环——不知道要循环多少次？](chapters/chapter-10-while-loop.md) | 第10章 |
-| [字典与元组](chapters/chapter-11-dict-tuple.md) | 第11章 |
-| [函数——把代码打包成积木](chapters/chapter-12-functions.md) | 第12章 |
-| [面向对象入门——把数据和功能打包](chapters/chapter-13-oop-basics.md) | 第13章 |
-| [异常处理——程序出错了怎么办](chapters/chapter-14-exceptions.md) | 第14章 |
-| [嵌入式是什么 & 认识 ESP32](chapters/chapter-15-embedded-esp32.md) | 第15章 |
-| [MicroPython 固件烧录 & Thonny 连接](chapters/chapter-16-micropython-setup.md) | 第16章 |
-| [GPIO 点亮 LED](chapters/chapter-17-gpio-led.md) | 第17章 |
-| [按键输入——ESP32 感知物理世界](chapters/chapter-18-button-input.md) | 第18章 |
-| [PWM 呼吸灯](chapters/chapter-19-pwm.md) | 第19章 |
-| [🏆 毕业项目：温湿度计 + OLED](chapters/chapter-20-final-project.md) | 第20章 |
+| 序号 | 章节 | 学习周期 |
+|------|------|---------|
+| 1 | [Python 是什么 & 安装 Thonny](chapters/chapter-01-python-intro.md) | Day 1 |
+| 2 | [第一行代码：Hello, World!](chapters/chapter-02-hello-world.md) | Day 1 |
+| 3 | [变量——给数据取个名字](chapters/chapter-03-variables.md) | Day 2 |
+| 4 | [数字与运算符](chapters/chapter-04-numbers-and-operators.md) | Day 2 |
+| 5 | [字符串——文本处理的起点](chapters/chapter-05-strings.md) | Day 3 |
+| 6 | [input()——让程序和用户对话](chapters/chapter-06-input.md) | Day 4 |
+| 7 | [条件判断——让程序学会做选择](chapters/chapter-07-conditionals.md) | Day 4 |
+| 8 | [列表——一个变量装多个数据](chapters/chapter-08-lists.md) | Day 5 |
+| 9 | [for 循环——重复的事情交给机器](chapters/chapter-09-for-loop.md) | Day 6 |
+| 10 | [while 循环——不知道要循环多少次？](chapters/chapter-10-while-loop.md) | Day 6 |
+| 11 | [字典与元组](chapters/chapter-11-dict-tuple.md) | Day 7 |
+| 12 | [函数——把代码打包成积木](chapters/chapter-12-functions.md) | Day 8 |
+| 13 | [面向对象入门——把数据和功能打包](chapters/chapter-13-oop-basics.md) | Day 9 |
+| 14 | [异常处理——程序出错了怎么办](chapters/chapter-14-exceptions.md) | Day 10 |
+| 15 | [嵌入式是什么 & 认识 ESP32](chapters/chapter-15-embedded-esp32.md) | Day 11 |
+| 16 | [MicroPython 固件烧录 & Thonny 连接](chapters/chapter-16-micropython-setup.md) | Day 12 |
+| 17 | [GPIO 点亮 LED](chapters/chapter-17-gpio-led.md) | Day 12 |
+| 18 | [按键输入——ESP32 感知物理世界](chapters/chapter-18-button-input.md) | Day 13 |
+| 19 | [PWM 呼吸灯](chapters/chapter-19-pwm.md) | Day 13 |
+| 20 | [🏆 毕业项目：温湿度计 + OLED](chapters/chapter-20-final-project.md) | Day 14 |
 | | |
-| [附录：OOP 进阶（继承、多态、魔法方法）](chapters/appendix-oop-advanced.md) | 附录 |
-| [附录：文件读写](chapters/appendix-file-io.md) | 附录 |
-| [附录：问题排查 & 学习路线](chapters/appendix-troubleshooting.md) | 附录 |
-| [参考答案](chapters/exercise-answers.md) | — |
-| [完整合订本](chapters/python-esp32-tutorial.md) | — |
+| 附 | [OOP 进阶（继承、多态、魔法方法）](chapters/appendix-oop-advanced.md) | 选读 |
+| 附 | [文件读写](chapters/appendix-file-io.md) | 选读 |
+| 附 | [问题排查 & 学习路线](chapters/appendix-troubleshooting.md) | 参考 |
+| | [参考答案](chapters/exercise-answers.md) | |
+| | [完整合订本](chapters/python-esp32-tutorial.md) | |
 
 ## 📄 许可
 
