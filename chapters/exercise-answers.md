@@ -1339,25 +1339,19 @@ while True:
 **⭐ 容易**
 
 ```python
-from machine import Pin
+from machine import Pin, PWM
 import time
 
-led = Pin(13, Pin.OUT)
-button = Pin(25, Pin.IN, Pin.PULL_UP)
-
-led_state = False
+led = PWM(Pin(13), freq=5000)
 
 while True:
-    if button.value() == 0:          # 按键按下
-        time.sleep(0.2)              # 消抖
-        if button.value() == 0:      # 确认按下
-            led_state = not led_state
-            led.value(led_state)
-            while button.value() == 0:  # 等待松开
-                time.sleep(0.1)
+    for duty in range(0, 1024, 8):    # 步长 8 = 2 倍速
+        led.duty(duty)
+        time.sleep(0.005)
+    for duty in range(1023, -1, -8):
+        led.duty(duty)
+        time.sleep(0.005)
 ```
-
----
 
 **⭐⭐ 中等**
 
@@ -1366,35 +1360,19 @@ from machine import Pin
 import time
 
 led = Pin(13, Pin.OUT)
-button = Pin(25, Pin.IN, Pin.PULL_UP)
-
-last_press_time = 0
 
 while True:
-    if button.value() == 0:
-        time.sleep(0.05)
-        if button.value() == 0:
-            now = time.ticks_ms()
-            interval = time.ticks_diff(now, last_press_time)
-
-            if interval < 400:   # 双击
-                for _ in range(5):
-                    led.value(1)
-                    time.sleep(0.1)
-                    led.value(0)
-                    time.sleep(0.1)
-                last_press_time = 0
-            else:                # 单击
-                led.value(1)
-                time.sleep(1)
-                led.value(0)
-                last_press_time = now
-
-            while button.value() == 0:
-                time.sleep(0.05)
+    for _ in range(5):        # 快闪 5 次
+        led.value(1)
+        time.sleep(0.1)
+        led.value(0)
+        time.sleep(0.1)
+    for _ in range(3):        # 慢闪 3 次
+        led.value(1)
+        time.sleep(0.5)
+        led.value(0)
+        time.sleep(0.5)
 ```
-
----
 
 **⭐⭐⭐ 困难**
 
@@ -1402,12 +1380,18 @@ while True:
 from machine import Pin, PWM
 import time
 
-led = PWM(Pin(13), freq=5000)
-led.duty(0)
+led1 = PWM(Pin(13), freq=5000)
+led2 = PWM(Pin(12), freq=5000)
 
-button = Pin(25, Pin.IN, Pin.PULL_UP)
-
-mode = 0  # 0=呼吸, 1=常亮, 2=闪烁
+while True:
+    for x in range(0, 1024, 4):
+        led1.duty(x)
+        led2.duty(1023 - x)
+        time.sleep(0.005)
+    for x in range(1023, -1, -4):
+        led1.duty(x)
+        led2.duty(1023 - x)
+        time.sleep(0.005)
 
 def breathe():
     for d in range(0, 1024, 8):
