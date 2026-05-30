@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 320" width="380" height="320">
+  <style>text{font-family:Arial,Microsoft YaHei,sans-serif;font-size:13px} .title{font-size:15px;font-weight:bold} .small{font-size:11px;fill:#555}</style>
+  
+  <text x="190" y="18" text-anchor="middle" class="title">开漏输出 Open-Drain</text>
+  
+  <!-- 无上开关 -->
+  <text x="80" y="55" text-anchor="middle" class="small" fill="#ccc">(无上开关)</text>
+  <rect x="55" y="60" width="50" height="25" rx="3" fill="#eee" stroke="#ccc" stroke-dasharray="4"/>
+  
+  <!-- 下开关(NMOS) -->
+  <rect x="275" y="95" width="50" height="30" rx="3" fill="#e74c3c" opacity="0.8"/>
+  <text x="300" y="115" text-anchor="middle" fill="white" font-size="11">N-MOS</text>
+  
+  <!-- 连接线 -->
+  <line x1="275" y1="110" x2="190" y2="110" stroke="#333" stroke-width="2"/>
+  
+  <!-- 引脚输出位置 -->
+  <circle cx="190" cy="110" r="4" fill="#333"/>
+  <line x1="190" y1="114" x2="190" y2="180" stroke="#333" stroke-width="2"/>
+  
+  <!-- 外部上拉电阻 -->
+  <text x="80" y="180" text-anchor="middle" class="small">外部上拉电阻~10kΩ</text>
+  <rect x="55" y="185" width="50" height="32" rx="3" fill="#f39c12" opacity="0.8"/>
+  <text x="80" y="206" text-anchor="middle" fill="white" font-size="11">R上拉</text>
+  
+  <!-- VCC to 上拉电阻 -->
+  <line x1="80" y1="35" x2="80" y2="185" stroke="#e74c3c" stroke-width="2"/>
+  <text x="80" y="30" text-anchor="middle" fill="#e74c3c" font-weight="bold">3.3V</text>
+  
+  <!-- 上拉电阻到输出 -->
+  <line x1="105" y1="201" x2="173" y2="201" stroke="#f39c12" stroke-width="2"/>
+  <line x1="173" y1="201" x2="173" y2="110" stroke="#f39c12" stroke-width="2"/>
+  <line x1="173" y1="110" x2="190" y2="110" stroke="#f39c12" stroke-width="2"/>
+  
+  <!-- GND -->
+  <line x1="300" y1="35" x2="300" y2="95" stroke="#333" stroke-width="2"/>
+  <text x="300" y="30" text-anchor="middle" fill="#333" font-weight="bold">GND</text>
+  
+  <text x="190" y="155" text-anchor="middle" class="small" fill="#f39c12">引脚输出点</text>
+  
+  <!-- 标注 -->
+  <text x="80" y="260" text-anchor="middle" fill="#f39c12" font-weight="bold">NMOS OFF → 靠外部电阻拉到3.3V</text>
+  <text x="80" y="278" text-anchor="middle" class="small">输出高电平(但驱动能力弱)</text>
+  
+  <text x="300" y="260" text-anchor="middle" fill="#e74c3c" font-weight="bold">NMOS ON → 直接拉到GND</text>
+  <text x="300" y="278" text-anchor="middle" class="small">输出低电平(0V)</text>
+  
+  <text x="190" y="310" text-anchor="middle" class="small">多路开漏可共线(I2C总线基础)，高电平需外部电阻</text>
+</svg>

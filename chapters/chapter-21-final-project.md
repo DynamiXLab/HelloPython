@@ -17,19 +17,7 @@
 
 OLED 屏幕用的就是 I2C 协议。I2C（Inter-Integrated Circuit，读作"I方C"或"I two C"）是一个叫 Philips 的公司在 1982 年发明的，只用**两根线**就能连接多个设备：
 
-```
-          SDA（数据线）— 所有设备共享
-ESP32 ──┤
-          SCL（时钟线）— 所有设备共享
-         
-          ┌─────────┐
-          │  OLED   │ 地址 0x3C
-          ├─────────┤
-          │  DHT11  │（不是 I2C，单独讲）
-          ├─────────┤
-          │ 其他设备 │ 地址 0x68
-          └─────────┘
-```
+![I2C 总线拓扑](images/i2c-bus.svg)
 
 - **SDA（Serial Data）**：数据线，双向传输数据
 - **SCL（Serial Clock）**：时钟线，由 ESP32 发出节拍来同步通信节奏

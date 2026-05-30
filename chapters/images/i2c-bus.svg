@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280">
+  <style>text{font-family:Arial,Microsoft YaHei,sans-serif;font-size:13px} .title{font-size:15px;font-weight:bold} .small{font-size:10px;fill:#666} .dev{font-size:12px}</style>
+  
+  <text x="210" y="18" text-anchor="middle" class="title">I2C 总线拓扑</text>
+  
+  <!-- ESP32 -->
+  <rect x="160" y="30" width="100" height="45" rx="5" fill="#2c3e50"/>
+  <text x="210" y="55" text-anchor="middle" fill="white" font-weight="bold">ESP32</text>
+  <text x="210" y="69" text-anchor="middle" fill="#bdc3c7" class="small">主机 Master</text>
+  
+  <!-- SDA线 -->
+  <line x1="20" y1="115" x2="400" y2="115" stroke="#27ae60" stroke-width="2.5"/>
+  <text x="400" y="111" fill="#27ae60" class="small">SDA</text>
+  
+  <!-- SCL线 -->
+  <line x1="20" y1="145" x2="400" y2="145" stroke="#2980b9" stroke-width="2.5"/>
+  <text x="400" y="141" fill="#2980b9" class="small">SCL</text>
+  
+  <!-- 上拉电阻 -->
+  <text x="5" y="98" class="small" fill="#e67e22">3.3V</text>
+  <rect x="12" y="100" width="16" height="13" rx="2" fill="#e67e22"/>
+  <line x1="28" y1="106" x2="40" y2="115" stroke="#e67e22" stroke-width="1.5"/>
+  
+  <rect x="12" y="130" width="16" height="13" rx="2" fill="#e67e22"/>
+  <line x1="28" y1="137" x2="40" y2="145" stroke="#e67e22" stroke-width="1.5"/>
+  
+  <!-- ESP32 到总线的连线 -->
+  <line x1="210" y1="75" x2="210" y2="115" stroke="#333" stroke-width="1.5"/>
+  <circle cx="210" cy="115" r="4" fill="#27ae60"/>
+  <line x1="210" y1="75" x2="210" y2="145" stroke="#999" stroke-width="1.5" stroke-dasharray="3"/>
+  <circle cx="210" cy="145" r="4" fill="#2980b9"/>
+  
+  <!-- OLED -->
+  <rect x="60" y="170" width="90" height="50" rx="5" fill="#16a085"/>
+  <text x="105" y="192" text-anchor="middle" fill="white" font-weight="bold" class="dev">OLED</text>
+  <text x="105" y="210" text-anchor="middle" fill="#a3e4d7" class="small">地址 0x3C</text>
+  <line x1="105" y1="170" x2="105" y2="145" stroke="#333" stroke-width="1.5"/>
+  <circle cx="105" cy="145" r="4" fill="#2980b9"/>
+  <line x1="105" y1="170" x2="105" y2="140" stroke="#333" stroke-width="1.5" stroke-dasharray="3"/>
+  <circle cx="105" cy="140" r="4" fill="#27ae60" opacity="0"/>
+  
+  <!-- 传感器 -->
+  <rect x="230" y="170" width="90" height="50" rx="5" fill="#8e44ad"/>
+  <text x="275" y="192" text-anchor="middle" fill="white" font-weight="bold" class="dev">传感器</text>
+  <text x="275" y="210" text-anchor="middle" fill="#d2b4de" class="small">地址 0x68</text>
+  <line x1="275" y1="170" x2="275" y2="115" stroke="#333" stroke-width="1.5"/>
+  <circle cx="275" cy="115" r="4" fill="#27ae60"/>
+  
+  <!-- 数据方向标注 -->
+  <text x="210" y="265" text-anchor="middle" class="small">所有设备共享 SDA/SCL 两根线，通过地址区分</text>
+</svg>

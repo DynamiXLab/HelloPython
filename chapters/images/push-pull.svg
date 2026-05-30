@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 320" width="380" height="320">
+  <style>text{font-family:Arial,Microsoft YaHei,sans-serif;font-size:13px} .title{font-size:15px;font-weight:bold} .small{font-size:11px;fill:#555}</style>
+  
+  <!-- 推挽高电平 -->
+  <text x="190" y="18" text-anchor="middle" class="title">推挽输出 Push-Pull</text>
+  
+  <!-- VCC -->
+  <line x1="80" y1="35" x2="80" y2="120" stroke="#e74c3c" stroke-width="2"/>
+  <text x="80" y="30" text-anchor="middle" fill="#e74c3c" font-weight="bold">3.3V</text>
+  
+  <!-- GND -->
+  <line x1="300" y1="35" x2="300" y2="120" stroke="#333" stroke-width="2"/>
+  <text x="300" y="30" text-anchor="middle" fill="#333" font-weight="bold">GND</text>
+  
+  <!-- 上开关(PMOS) -->
+  <rect x="55" y="110" width="50" height="30" rx="3" fill="#2ecc71" opacity="0.8"/>
+  <text x="80" y="130" text-anchor="middle" fill="white" font-size="11">P-MOS</text>
+  
+  <!-- 下开关(NMOS) -->
+  <rect x="275" y="110" width="50" height="30" rx="3" fill="#e74c3c" opacity="0.8"/>
+  <text x="300" y="130" text-anchor="middle" fill="white" font-size="11">N-MOS</text>
+  
+  <!-- 连接线 -->
+  <line x1="105" y1="125" x2="190" y2="125" stroke="#333" stroke-width="2"/>
+  <line x1="275" y1="125" x2="190" y2="125" stroke="#333" stroke-width="2"/>
+  <line x1="190" y1="125" x2="190" y2="200" stroke="#333" stroke-width="2"/>
+  
+  <!-- 输出标签 -->
+  <text x="210" y="165" fill="#333" font-size="12">输出</text>
+  
+  <!-- 标注：高电平 -->
+  <text x="80" y="230" text-anchor="middle" fill="#2ecc71" font-weight="bold">输出高电平(3.3V)</text>
+  <text x="80" y="248" text-anchor="middle" class="small">上开关ON，下开关OFF</text>
+  
+  <!-- 标注：低电平 -->
+  <text x="300" y="230" text-anchor="middle" fill="#e74c3c" font-weight="bold">输出低电平(0V)</text>
+  <text x="300" y="248" text-anchor="middle" class="small">上开关OFF，下开关ON</text>
+
+  <!-- 箭头: P管导通 -->
+  <path d="M 80 155 L 80 80" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowG)"/>
+  <defs><marker id="arrowG" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M 0,0 L 8,4 L 0,8 Z" fill="#2ecc71"/></marker></defs>
+  
+  <!-- 推挽特点 -->
+  <text x="190" y="290" text-anchor="middle" class="small">两路开关互斥工作，驱动能力强，不可多路并联</text>
+</svg>
