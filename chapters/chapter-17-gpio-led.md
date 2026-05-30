@@ -1,16 +1,16 @@
-# 第18章 GPIO 点亮 LED——嵌入式版的 Hello World
+# 第17章 GPIO 点亮 LED——嵌入式版的 Hello World
 
 > **难度**：⭐⭐⭐  
 > **所属教程**：Python 零基础入门到 MicroPython 嵌入式实战  
-> **前置章节**：第17章（MicroPython 固件烧录 & Thonny 连接）
+> **前置章节**：第16章（MicroPython 固件烧录 & Thonny 连接）
 
 ---
 
-### 19.1 什么是 GPIO
+### 17.1 什么是 GPIO
 
 GPIO（General Purpose Input/Output）即**通用输入输出引脚**。你可以通过代码控制这些引脚输出高电平（3.3V）或低电平（0V）。
 
-### 19.2 硬件连接
+### 17.2 硬件连接
 
 ```
 ESP32 引脚 D13(GPIO13) ──── 220Ω 电阻 ──── LED 正极（长脚）
@@ -20,7 +20,7 @@ ESP32 引脚 D13(GPIO13) ──── 220Ω 电阻 ──── LED 正极（长
 
 > **关键**：LED 长脚接正极，短脚接 GND。电阻必须串接，否则 LED 会烧掉。
 
-### 19.3 代码——点亮 LED
+### 17.3 代码——点亮 LED
 
 ```python
 from machine import Pin
@@ -35,7 +35,7 @@ time.sleep(2)    # 保持 2 秒
 led.value(0)     # 0 = 低电平 = 灭
 ```
 
-### 19.4 LED 闪烁
+### 17.4 LED 闪烁
 
 ```python
 from machine import Pin
@@ -80,7 +80,7 @@ GPIO14 ──[220Ω]── LED3 ── GND
 3. 全灭后等 1 秒，然后 3 个 LED 同时快闪 3 次（模拟"发射"）
 4. 最后全部长亮
 
-> 综合运用：GPIO 输出（第19章）+ for 循环（第9章）+ 列表（第8章）+ `time.sleep()` 时间控制。
+> 综合运用：GPIO 输出（第17章）+ for 循环（第9章）+ 列表（第8章）+ `time.sleep()` 时间控制。
 
 ---
 
