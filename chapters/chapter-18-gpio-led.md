@@ -99,7 +99,47 @@ LED 或 GPIO 引脚会烧掉。**限流电阻不是'可选'，是必须有的保
 
 > 我们 1kΩ 电阻 + LED 的电流只有 1.3mA，远离上限，放心使用。
 
-### 18.6 代码——点亮 LED
+### 18.6 machine 库——操控 ESP32 硬件的钥匙
+
+从本章开始，你需要接触 MicroPython 最核心的库：**`machine`**。它是 ESP32 硬件操作的总入口——GPIO、PWM、I2C、ADC 等所有底层功能，都通过它来调用。
+
+本节只用到了它里面的一个类：**`Pin`**（引脚），用来控制 GPIO 引脚的输入输出。
+
+```python
+from machine import Pin    # 从 machine 库导入 Pin 类
+```
+
+第10章学过 `import`——这里 `from machine import Pin` 的意思是：只从 `machine` 这个模块里拿 `Pin` 这一个类，其他功能不导入。
+
+**`Pin` 的用法：**
+
+```python
+led = Pin(13, Pin.OUT)     # 将 GPIO13 设为输出模式（OUT = Output）
+button = Pin(25, Pin.IN)   # 将 GPIO25 设为输入模式（IN = Input）
+```
+
+`Pin(引脚编号, 模式)` 创建了一个引脚对象。模式有两种：
+- `Pin.OUT`：输出——你可以控制它是高电平还是低电平
+- `Pin.IN`：输入——你可以读取外部信号是高还是低
+- `Pin.PULL_UP`：输入 + 启用内部上拉电阻（第20章按键会用到）
+
+创建好 `led` 这个 Pin 对象后，用 `.value()` 来控制电平：
+
+```python
+led.value(1)     # 输出高电平（3.3V）→ LED 亮
+led.value(0)     # 输出低电平（0V）→ LED 灭
+```
+
+`time.sleep()` 来自另一个内置模块 `time`，作用是让程序暂停指定秒数：
+
+```python
+import time
+time.sleep(0.5)  # 暂停 0.5 秒
+```
+
+> `machine` 库是 MicroPython 独有的，在电脑版 Python 里没有。你在 Thonny 选择 MicroPython (ESP32) 解释器后，它才能正常导入。这就是为什么第16~17章先要烧录固件并连接 ESP32。
+
+### 18.7 代码——点亮 LED
 
 ```python
 from machine import Pin
@@ -114,7 +154,7 @@ time.sleep(2)    # 保持 2 秒
 led.value(0)     # 0 = 低电平 = 灭
 ```
 
-### 18.7 LED 闪烁
+### 18.8 LED 闪烁
 
 ```python
 from machine import Pin
@@ -131,7 +171,7 @@ while True:
 
 你会看到 LED 以每秒一次的频率闪烁。恭喜，你写的代码已经能影响物理世界了！
 
-### 18.8 小实验——能不能让 LED "半亮"？
+### 18.9 小实验——能不能让 LED "半亮"？
 
 你现在的代码只能让 LED **全亮**或**全灭**。试着想一个问题：
 
