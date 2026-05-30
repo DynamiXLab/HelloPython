@@ -65,9 +65,9 @@
 | 13 | [面向对象入门——把数据和功能打包](chapters/chapter-13-oop-basics.md) | Day 9 |
 | 14 | [异常处理——程序出错了怎么办](chapters/chapter-14-exceptions.md) | Day 10 |
 | 15 | [嵌入式是什么 & 认识 ESP32](chapters/chapter-15-embedded-esp32.md) | Day 11 |
-| 16 | [MicroPython 固件烧录 & Thonny 连接](chapters/chapter-16-micropython-setup.md) | Day 12 |
+| 16 | [MicroPython 固件烧录 & Thonny 连接](chapters/chapter-16-micropython-setup.md) | Day 11 |
 | 17 | [GPIO 点亮 LED](chapters/chapter-17-gpio-led.md) | Day 12 |
-| 18 | [按键输入——ESP32 感知物理世界](chapters/chapter-18-button-input.md) | Day 13 |
+| 18 | [按键输入——ESP32 感知物理世界](chapters/chapter-18-button-input.md) | Day 12 |
 | 19 | [PWM 呼吸灯](chapters/chapter-19-pwm.md) | Day 13 |
 | 20 | [🏆 毕业项目：温湿度计 + OLED](chapters/chapter-20-final-project.md) | Day 14 |
 | | |
