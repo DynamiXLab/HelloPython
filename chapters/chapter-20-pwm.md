@@ -1,16 +1,16 @@
-# 第19章 PWM 呼吸灯——让 LED 像呼吸一样渐变
+# 第20章 PWM 呼吸灯——让 LED 像呼吸一样渐变
 
 > **难度**：⭐⭐⭐  
 > **所属教程**：Python 零基础入门到 MicroPython 嵌入式实战  
-> **前置章节**：第18章（按键输入）
+> **前置章节**：第19章（按键输入）
 
 ---
 
-### 19.1 什么是 PWM
+### 20.1 什么是 PWM
 
 PWM（脉冲宽度调制）通过快速开关来模拟不同的电压输出。在一个很短的时间周期里，如果 50% 时间高电平、50% 时间低电平，LED 看起来就是 50% 亮度。
 
-### 19.2 MicroPython 的 PWM
+### 20.2 MicroPython 的 PWM
 
 ```python
 from machine import Pin, PWM
@@ -24,7 +24,7 @@ led.duty(512)    # 约 50% 亮度
 led.duty(1023)   # 最亮
 ```
 
-### 19.3 呼吸灯效果
+### 20.3 呼吸灯效果
 
 ```python
 from machine import Pin, PWM

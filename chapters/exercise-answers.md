@@ -424,7 +424,49 @@ for i in range(1, 10):
 
 ---
 
-## 第10章 while 循环——不知道要循环多少次？
+## 第10章 导入模块——借用别人的代码
+
+**⭐ 容易**
+
+```python
+import math
+
+print(f"π = {math.pi}")
+print(f"√2 = {math.sqrt(2)}")
+```
+
+**⭐⭐ 中等**
+
+```python
+import random
+
+counts = [0] * 6    # 索引 0~5 对应骰子 1~6
+
+for i in range(10):
+    result = random.randint(1, 6)
+    print(f"第{i+1}次：{result}")
+    counts[result - 1] += 1
+
+print()
+for i in range(6):
+    print(f"{i+1} 出现了 {counts[i]} 次")
+```
+
+**⭐⭐⭐ 困难**
+
+```python
+import random
+
+chars = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%"
+password = ""
+for i in range(8):
+    password += random.choice(chars)
+print(f"生成的密码：{password}")
+```
+
+---
+
+## 第11章 while 循环——不知道要循环多少次？
 
 **⭐ 容易**
 
@@ -504,7 +546,7 @@ while True:
 
 ---
 
-## 第11章 字典与元组
+## 第12章 字典与元组
 
 **⭐ 容易**
 
@@ -599,7 +641,7 @@ while True:
 
 ---
 
-## 第12章 函数——把代码打包成积木
+## 第13章 函数——把代码打包成积木
 
 **⭐ 容易**
 
@@ -670,7 +712,7 @@ print(check_password_strength("PythonRocks"))
 
 ---
 
-## 第13章 面向对象入门——把数据和功能打包在一起
+## 第14章 面向对象入门——把数据和功能打包在一起
 
 **⭐ 容易**
 
@@ -895,7 +937,7 @@ while True:
 
 ---
 
-## 第14章 异常处理——程序出错了怎么办
+## 第15章 异常处理——程序出错了怎么办
 
 **⭐ 容易**
 
@@ -1118,7 +1160,7 @@ print(f"平均薪资：{round(total / len(employees), 1)}元")
 
 ---
 
-## 第15章 嵌入式是什么 & 认识 ESP32
+## 第16章 嵌入式是什么 & 认识 ESP32
 
 **⭐ 容易**
 
@@ -1163,7 +1205,7 @@ WDT      — 看门狗定时器
 
 ---
 
-## 第16章 MicroPython 固件烧录 & Thonny 连接
+## 第17章 MicroPython 固件烧录 & Thonny 连接
 
 **⭐ 容易**
 
@@ -1213,7 +1255,7 @@ print(sys.version)      # 查看 MicroPython 版本
 
 ---
 
-## 第17章 GPIO 点亮 LED——嵌入式版的 Hello World
+## 第18章 GPIO 点亮 LED——嵌入式版的 Hello World
 
 **⭐ 容易**
 
@@ -1292,7 +1334,7 @@ while True:
 
 ---
 
-## 第18章 按键输入——ESP32 感知物理世界
+## 第19章 按键输入——ESP32 感知物理世界
 
 **⭐ 容易**
 
@@ -1406,7 +1448,7 @@ while True:
 
 ---
 
-## 第19章 PWM 呼吸灯——让 LED 像呼吸一样渐变
+## 第20章 PWM 呼吸灯——让 LED 像呼吸一样渐变
 
 **⭐ 容易**
 
@@ -1510,7 +1552,7 @@ while True:
 
 ---
 
-## 第20章 毕业项目：温湿度计 + OLED 显示
+## 第21章 🏆 毕业项目：温湿度计 + OLED 显示
 
 **⭐ 容易**
 
