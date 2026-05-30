@@ -114,6 +114,59 @@ LED1: ░░░░██████  LED2: ████░░░░░░
 
 > 提示：同时设置两个 PWM 的 duty：`led1.duty(x)`，`led2.duty(1023 - x)`。综合运用：PWM（第19章）+ for 循环（第9章）。
 
+**🎨 创意实验：RGB 三色混光**
+
+接上 3 个 LED——红色、绿色、蓝色各一个（分别接 GPIO13、GPIO12、GPIO14），用三路 PWM 分别控制它们的亮度。
+
+**核心思路**：调节三个 LED 的亮度比例，混合出不同颜色——和电视屏幕的像素显色原理一样。
+
+```
+电路参考：
+GPIO13 ──[1kΩ]── 红色 LED ── GND
+GPIO12 ──[1kΩ]── 绿色 LED ── GND
+GPIO14 ──[1kΩ]── 蓝色 LED ── GND
+```
+
+```python
+from machine import Pin, PWM
+import time
+
+r = PWM(Pin(13), freq=5000)    # 红
+g = PWM(Pin(12), freq=5000)    # 绿
+b = PWM(Pin(14), freq=5000)    # 蓝
+
+# 试试不同颜色混合
+r.duty(1023); g.duty(0);   b.duty(0)     # 红色
+r.duty(0);   g.duty(1023); b.duty(0)     # 绿色
+r.duty(0);   g.duty(0);    b.duty(1023)  # 蓝色
+r.duty(1023); g.duty(512); b.duty(0)     # 橙色（红 + 半绿）
+r.duty(1023); g.duty(1023); b.duty(0)    # 黄色（红 + 绿）
+r.duty(512); g.duty(0);    b.duty(1023)  # 紫色（红 + 蓝）
+```
+
+**让颜色"动起来"——渐变循环：**
+
+```python
+while True:
+    # 红 → 绿
+    for x in range(0, 1024, 8):
+        r.duty(1023 - x)
+        g.duty(x)
+        time.sleep(0.01)
+    # 绿 → 蓝
+    for x in range(0, 1024, 8):
+        g.duty(1023 - x)
+        b.duty(x)
+        time.sleep(0.01)
+    # 蓝 → 红
+    for x in range(0, 1024, 8):
+        b.duty(1023 - x)
+        r.duty(x)
+        time.sleep(0.01)
+```
+
+> 💡 **柔光技巧**：把一张白纸折一下罩在三个 LED 上方（距离约 2~3cm），纸会把三束光混合均匀，你就能看到平滑的过渡色。
+
 ---
 
 💡 **思考延续**

@@ -1392,42 +1392,28 @@ while True:
         led1.duty(x)
         led2.duty(1023 - x)
         time.sleep(0.005)
+```
 
-def breathe():
-    for d in range(0, 1024, 8):
-        led.duty(d)
-        time.sleep(0.003)
-    for d in range(1023, -1, -8):
-        led.duty(d)
-        time.sleep(0.003)
+**🎨 RGB 三色混光**
 
-def steady():
-    led.duty(1023)
+```python
+from machine import Pin, PWM
+import time
 
-def blink():
-    for _ in range(3):
-        led.duty(1023)
-        time.sleep(0.2)
-        led.duty(0)
-        time.sleep(0.2)
+r = PWM(Pin(13), freq=5000)
+g = PWM(Pin(12), freq=5000)
+b = PWM(Pin(14), freq=5000)
 
 while True:
-    # 检查按键
-    if button.value() == 0:
-        time.sleep(0.2)
-        if button.value() == 0:
-            mode = (mode + 1) % 3
-            print(f"切换到模式 {mode}")
-            while button.value() == 0:
-                time.sleep(0.1)
-
-    # 执行当前模式
-    if mode == 0:
-        breathe()
-    elif mode == 1:
-        steady()
-    else:
-        blink()
+    for x in range(0, 1024, 8):
+        r.duty(1023 - x); g.duty(x)
+        time.sleep(0.01)
+    for x in range(0, 1024, 8):
+        g.duty(1023 - x); b.duty(x)
+        time.sleep(0.01)
+    for x in range(0, 1024, 8):
+        b.duty(1023 - x); r.duty(x)
+        time.sleep(0.01)
 ```
 
 ---
