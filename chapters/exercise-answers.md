@@ -1526,26 +1526,24 @@ while True:
 
 **⭐ 容易**
 
-按硬件连接图接好 DHT11 和 OLED，运行章节中的完整代码，验证 OLED 屏幕正确显示温湿度数据即可。
+接好 AHT20 + OLED（共享 I2C 总线），运行章节中的完整代码，验证 OLED 屏幕正确显示温湿度。
 
 参考代码（即章节完整代码）：
 
 ```python
 from machine import Pin, SoftI2C
-import dht
+import ahtx0
 import ssd1306
 import time
 
-dht_sensor = dht.DHT11(Pin(4))
-
 i2c = SoftI2C(scl=Pin(22), sda=Pin(21))
+sensor = ahtx0.AHT20(i2c)
 oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
 while True:
     try:
-        dht_sensor.measure()
-        temp = dht_sensor.temperature()
-        hum = dht_sensor.humidity()
+        temp = sensor.temperature
+        hum = sensor.relative_humidity
 
         oled.fill(0)
         oled.text("Temp & Hum", 0, 0)
@@ -1568,11 +1566,12 @@ while True:
 
 ```python
 from machine import Pin, SoftI2C
-import dht
+import ahtx0
 import ssd1306
 import time
 
-dht_sensor = dht.DHT11(Pin(4))
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21))
+sensor = ahtx0.AHT20(i2c)
 led = Pin(13, Pin.OUT)
 
 i2c = SoftI2C(scl=Pin(22), sda=Pin(21))
@@ -1580,13 +1579,12 @@ oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
 while True:
     try:
-        dht_sensor.measure()
-        temp = dht_sensor.temperature()
-        hum = dht_sensor.humidity()
+        temp = sensor.temperature
+        hum = sensor.relative_humidity
 
         oled.fill(0)
-        oled.text(f"Temp: {temp} C", 0, 0)
-        oled.text(f"Hume: {hum} %", 0, 20)
+        oled.text(f"Temp: {temp:.1f} C", 0, 0)
+        oled.text(f"Hum: {hum:.1f} %", 0, 20)
 
         # 温湿度判断
         if temp > 30:
@@ -1626,18 +1624,18 @@ while True:
 
 ```python
 from machine import Pin, SoftI2C, PWM
-import dht
+import ahtx0
 import ssd1306
 import time
 
 # ====== 硬件初始化 ======
-dht_sensor = dht.DHT11(Pin(4))
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21))
+sensor = ahtx0.AHT20(i2c)
 led = PWM(Pin(13), freq=5000)
 led.duty(0)
 
 button = Pin(25, Pin.IN, Pin.PULL_UP)
 
-i2c = SoftI2C(scl=Pin(22), sda=Pin(21))
 oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
 # ====== 状态变量 ======
@@ -1654,9 +1652,8 @@ def led_alert():
 
 while True:
     try:
-        dht_sensor.measure()
-        temp = dht_sensor.temperature()
-        hum = dht_sensor.humidity()
+        temp = sensor.temperature
+        hum = sensor.relative_humidity
 
         # 温度超32℃触发告警
         if temp > 32:
